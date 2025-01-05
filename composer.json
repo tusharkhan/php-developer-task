@@ -1,0 +1,15 @@
+{
+    "name": "tusharkhan/task",
+    "description": "Interview Task",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tusharkhan",
+            "email": "mdtush0@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
