@@ -19,4 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "Category added successfully!";
     $stmt->close();
     $conn->close();
+
+    header("Location: ../index.php");
+    exit();
 }

@@ -11,7 +11,7 @@ $conn = connectDatabase();
 
 $result = $conn->query("SELECT 
     p.id, p.name as product_name, c.name as category_name, 
-    po.name as option_name, po.image_path, po.price 
+    po.name as option_name, po.image_path, po.price , po.id as option_id
 FROM products p 
 LEFT JOIN categories c ON p.category_id = c.id
 LEFT JOIN product_options po ON p.id = po.product_id");

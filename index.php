@@ -24,6 +24,22 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="lib/logout.php">Logout</a>
             </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="cartDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cart (<span id="cart-total">0</span>)
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cartDropdown">
+                            <h6 class="dropdown-header">Cart Items</h6>
+                            <div id="cart-items" class="px-3">
+                                <p class="text-muted">Your cart is empty.</p>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 <?php endif; ?>
