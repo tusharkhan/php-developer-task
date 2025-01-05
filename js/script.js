@@ -69,21 +69,27 @@ $(document).ready(function () {
             const productList = $('#product-list');
             productList.empty();
 
-            data.forEach(product => {
-                productList.append(`
+            let navData = $("#navbar_data").attr("data-name");
 
-<tr>
-<td>${product.category_name}</td>
-<td>${product.product_name}</td>
-<td><img src="${product.image_path}" alt="${product.option_name}" width="100"></td>
-<td>${product.price} BDT</td>
-<td>${product.option_name}</td>
-<td class="btn-group" role="group" >
-    <button class="add-to-cart btn btn-primary" data-id="${product.id}">Add to Cart</button>
-    <button class="remove-from-cart btn btn-info" data-id="${product.id}">Remove from Cart</button>
-</td>
-</tr>
-                `);
+
+            data.forEach(product => {
+                let trData = '<tr>\n' +
+                    '<td>$'+product.category_name+'</td>\n' +
+                    '<td>'+product.product_name+'</td>\n' +
+                    '<td><img src="'+product.image_path+'"  width="100"></td>\n' +
+                    '<td>'+product.price+' BDT</td>\n' +
+                    '<td>'+product.option_name+'</td>\n' +
+                    '<td class="btn-group" role="group" >';
+
+                if (navData){
+                    trData += '<button class="add-to-cart btn btn-primary" data-id="'+product.id+'">Add to Cart</button>\n    ' +
+                        '<button class="remove-from-cart btn btn-info" data-id="'+product.id+'">Remove from Cart</button>'
+                } else {
+                    trData += '<a href="login.php" class="add-to-cart btn btn-primary" >Login To Add Cart</a>';
+                }
+
+                trData += '</td>\n</tr>'
+                productList.append(trData);
             });
         }
         xhttp.send();

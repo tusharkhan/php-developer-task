@@ -22,9 +22,24 @@ CREATE TABLE product_options (
      FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );
 
+-- Users Table
+CREATE TABLE users (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   username VARCHAR(255) NOT NULL UNIQUE,
+   password VARCHAR(255) NOT NULL,
+   email VARCHAR(255) NOT NULL UNIQUE,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 -- Cart Table
 CREATE TABLE cart (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      product_id INT NOT NULL,
-      FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  product_id INT NOT NULL,
+  quantity INT DEFAULT 1,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (product_id) REFERENCES products(id)
 );
+

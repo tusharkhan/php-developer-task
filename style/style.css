@@ -1,24 +1,10 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-input, select, button {
-    padding: 8px;
+.error {
+    color: red;
+    font-size: 14px;
     margin-bottom: 10px;
 }
-
-#product-list div {
-    border: 1px solid #ccc;
-    padding: 10px;
+.success {
+    color: green;
+    font-size: 14px;
     margin-bottom: 10px;
 }

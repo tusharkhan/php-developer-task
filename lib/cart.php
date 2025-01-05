@@ -5,6 +5,13 @@
  * date : 1/5/2025
  */
 
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+    exit();
+}
+
 require 'database.php';
 
 $conn = connectDatabase();
